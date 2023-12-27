@@ -35,8 +35,9 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
-      hobbies.push(hobby);
+      this.hobbies.push(hobby);
     }
+
     getFriends() {
       // El método 'getFriends' debe retornar un arreglo con sólo los nombres del arreglo de amigos
       // de la persona.
@@ -59,11 +60,9 @@ function crearClasePersona() {
 
       // Tu código aca:
       let  soloHobbies = [];
-      for (let i = 0; i < getHobbies.length; i++) {
-        if (amigos[i]['hobbies'] === nombre) {
-          soloHobbies = amigos[i];
+      for (let i = 0; i < this.hobbies.length; i++) {
+        soloHobbies.push(this.hobbies[i]);
         }
-      }
       return soloHobbies;
     }
     
