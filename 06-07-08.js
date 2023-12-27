@@ -11,7 +11,10 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
-
+      this.nombre=nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
     }
 
     addFriend(nombre, edad) {
@@ -20,7 +23,11 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
-
+      let obj = {
+        nombre: nombre,
+        edad: edad
+      }
+      this.amigos.push(obj);
     }
 
     addHobby(hobby) {
@@ -28,7 +35,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
-
+      hobbies.push(hobby);
     }
     getFriends() {
       // El método 'getFriends' debe retornar un arreglo con sólo los nombres del arreglo de amigos
@@ -38,7 +45,11 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
-
+      let soloNombres = [];
+      for (let i = 0; i < this.amigos.length; i++) {
+          soloNombres.push(this.amigos[i]['nombre']);
+      }
+      return soloNombres;
     }
 
     getHobbies() {
@@ -47,9 +58,15 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
-
+      let  soloHobbies = [];
+      for (let i = 0; i < getHobbies.length; i++) {
+        if (amigos[i]['hobbies'] === nombre) {
+          soloHobbies = amigos[i];
+        }
+      }
+      return soloHobbies;
     }
-
+    
     getPromedioEdad() {
       // El método 'getPromedioEdad' debe retornar el promedio de edad de los amigos de una persona
       // Ej:
@@ -64,15 +81,21 @@ function crearClasePersona() {
       //   }]
       // }
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
-
       // Tu código aca:
-
+      let acc =0;
+      let promedioFinal=0;
+      for (let i=0; i<this.amigos.length;i++){
+        acc+= this.amigos[i]['edad'];
+      }
+      if (this.amigos.length>0){
+        promedioFinal = acc/this.amigos.length;
+      }
+      return promedioFinal;
+      }
     }
-  };
 
-  return Persona;
-}
-
+      return Persona;
+    }
 // No modifiques nada debajo de esta linea //
 
 module.exports = crearClasePersona
