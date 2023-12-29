@@ -54,6 +54,7 @@ function crearClasePersona() {
     }
 
     getHobbies() {
+      
       // El método 'getHobbies' debe retornar un arreglo con los hobbies de la persona
       // Ej:
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
